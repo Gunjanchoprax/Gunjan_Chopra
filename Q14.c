@@ -1,4 +1,4 @@
-// Write a program to input a year and check whether it is a leap year or not using conditional statements
+// Write a program to input a character and check whether it is a vowel or consonant using if-else
 #include<stdio.h>
 int main()
 { 
