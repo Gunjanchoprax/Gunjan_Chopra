@@ -1,34 +1,22 @@
-//(Loops without Arrays/Strings)
+//Write a program to take a number as input and print its equivalent binary representation.
 #include <stdio.h>
 
 int main() {
-    int cp, sp;
-    int diff, percentage = 0;
+    int num, binary = 0, place = 1, remainder;
 
-    // Input Cost Price and Selling Price
-    scanf("%d %d", &cp, &sp);
+    // Input number
+    scanf("%d", &num);
 
-    if (sp > cp) {
-        diff = sp - cp;
-
-        // calculate (diff / cp) * 100 using loops
-        for (int i = 0; i < (diff * 100); i += cp) {
-            percentage++;
-        }
-        printf("Profit %d%%", percentage);
+    // Convert to binary
+    while (num > 0) {
+        remainder = num % 2;          // Get last binary digit
+        binary = binary + remainder * place;  
+        place = place * 10;           // Shift place (units → tens → hundreds)
+        num = num / 2;                // Divide by 2
     }
-    else if (sp < cp) {
-        diff = cp - sp;
 
-        // calculate (diff / cp) * 100 using loops
-        for (int i = 0; i < (diff * 100); i += cp) {
-            percentage++;
-        }
-        printf("Loss %d%%", percentage);
-    }
-    else {
-        printf("No Profit No Loss");
-    }
+    // Output binary
+    printf("%d", binary);
 
     return 0;
 }
