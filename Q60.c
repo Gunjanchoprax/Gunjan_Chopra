@@ -4,17 +4,17 @@ int main() {
     int n, i;
     int positive = 0, negative = 0, zero = 0;
 
-    // Input size of array
+    
     scanf("%d", &n);
 
     int arr[n];
 
-    // Input elements of array
+    
     for(i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
 
-    // Count positive, negative, and zero
+    //  positive, negative, and zero
     for(i = 0; i < n; i++) {
         if(arr[i] > 0)
             positive++;
